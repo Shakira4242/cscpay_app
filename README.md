@@ -14,8 +14,13 @@ This app is meant for demonstration purposes only.
   npm install
   cd ios
   pod install
-  cd ../
+  cd ..
+  
+  // run in simulator
   npx react-native run-ios
+  
+  // run on device
+  open ios/beetleapp.xcworkspace 
 ```
     
 ## Tech Stack
