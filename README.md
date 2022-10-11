@@ -12,7 +12,10 @@ This app is meant for demonstration purposes only.
   git clone https://github.com/Shakira4242/cscpay_app.git
   cd cscpay_app
   npm install
-  
+  cd ios
+  pod install
+  cd ../
+  npx react-native run-ios
 ```
     
 ## Tech Stack
