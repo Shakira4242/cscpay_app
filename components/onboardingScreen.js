@@ -61,20 +61,20 @@ const OnboardingScreen = ({navigation}) => {
           {
             backgroundColor: 'black',
             image: <Image source={require('../assets/images/onboarding-1.png')} />,
-            title: 'A new way to pay for laundry and more',
-            subtitle: 'Beetleapp cuts out all the middlemen and passes these savings onto you.',
+            title: 'A new way to pay for laundry and more.',
+            subtitle: 'Our app connects all of the services in your complex',
           },
           {
             backgroundColor: 'black',
             image: <Image source={require('../assets/images/onboarding-2.png')} />,
-            title: 'No more credit card fees.',
-            subtitle: 'With Beetleapp, you pay with credit cards but avoid the credit card fees.',
+            title: 'Flexible payments.',
+            subtitle: 'With Beetleapp, you can pay directly with your bank.',
           },
           {
             backgroundColor: 'black',
             image: <Image source={require('../assets/images/onboarding-3.png')} />,
-            title: "Tomorrow's payment technology, today",
-            subtitle: "We're building the future and it doesn't involve the big guys.",
+            title: "Rewards everywhere.",
+            subtitle: "Great offers, points, and rewards on every purchase!",
           },
         ]}
       />

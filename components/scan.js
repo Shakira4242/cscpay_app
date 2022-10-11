@@ -85,7 +85,7 @@ export default function Scan({route, navigation}){
 			for (const element of barcodes) {
 				// console.log(element.rawValue)
 				if([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40].includes(parseInt(element.rawValue))){
-					navigation.navigate('CheckoutScreen', {number: element.rawValue })
+					navigation.navigate('BLE', {number: element.rawValue })
 				}
 			}
 		}
@@ -154,7 +154,7 @@ export default function Scan({route, navigation}){
 		            color: colors.white,
 		            fontSize: 17,
 		            marginHorizontal: 20,
-		          }]}>Scan the qr code next to the number on the machine.</Text>
+		          }]}>Scan the qr code</Text>
 		          </View>
 		        </View>
 		    </BottomSheet>

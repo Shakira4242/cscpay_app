@@ -55,20 +55,20 @@ export default function Discover({ navigation }) {
 
   const [giftConfetti, setGiftConfetti] = useState(null)
 
-  const [categoriesData, setCategoriesData] = useState(null)
-
-  useEffect(()=>{
-    function getCategoryData() {
-      fetch("https://categorydata.lidar.workers.dev")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
-        setCategoriesData(data)
-      })
-    }
-    getCategoryData()
-  },[])
-
+  const [categoriesData, setCategoriesData] = useState([
+    {
+      'image': 'https://yrjpyxxskaprgyqwygdq.supabase.co/storage/v1/object/public/website/Gift.png',
+    },
+    {
+      'image': 'https://yrjpyxxskaprgyqwygdq.supabase.co/storage/v1/object/public/website/Gift.png',
+    },
+    {
+      'image': 'https://yrjpyxxskaprgyqwygdq.supabase.co/storage/v1/object/public/website/Basket.png',
+    },
+    {
+      'image': 'https://yrjpyxxskaprgyqwygdq.supabase.co/storage/v1/object/public/website/Basket.png',
+    },
+  ]);
 
   requestMultiple([PERMISSIONS.IOS.CAMERA, PERMISSIONS.IOS.BLUETOOTH_PERIPHERAL]).then((statuses) => {
     console.log('Camera', statuses[PERMISSIONS.IOS.CAMERA]);
@@ -94,16 +94,7 @@ export default function Discover({ navigation }) {
       <View
         style={styles.categoryItemWrapper}
       >
-        <TouchableOpacity
-          onPress={() =>
-            gift().then(function(data){
-              setGiftConfetti(data)
-            })
-            // navigation.navigate('Details', {item: item})
-          }
-        >
         <Image source={{uri: item.image}} style={styles.categoryItemImage} />
-        </TouchableOpacity>
       </View>
       <Text style={{color: colors.white, justifyContent: 'center', alignItems: 'center', textAlign: 'center', fontSize: 13}}>{item.title}</Text>
       </View>
@@ -173,19 +164,6 @@ export default function Discover({ navigation }) {
           </View>
         </SafeAreaView>
 
-        {/* Categories
-        <View style={styles.categoriesWrapper}>
-          <View style={styles.categoriesListWrapper}>
-            <FlatList
-              data={categoriesData}
-              renderItem={renderCategoryItem}
-              keyExtractor={(item) => item.id}
-              horizontal={true}
-            />
-          </View>
-        </View>
-        */}
-
         {/* Popular 
         <View style={styles.popularWrapper}>
           <Text style={styles.popularTitle}>Recent Transactions</Text>
@@ -243,26 +221,19 @@ export default function Discover({ navigation }) {
         <Text style={[styles.titlesTitle, {
           fontSize: 15,
           fontWeight: '500',
-          color: colors.white,
-        }]}>Click on the top right icon to get started
+          color: 'red',
+        }]}>Beta
         </Text>
         </View>
 
-        <Button 
-          title="update database"
-          onPress={()=>navigation.navigate('CreateAccount')}
-        >
-        </Button>
 
-        {/*
         <View style={[styles.titlesWrapper,{
           marginBottom: 5
         }]}>
         <Text style={[styles.titlesTitle, {
           fontSize: 20
-        }]}>Menu</Text>
+        }]}>Rewards</Text>
         </View>
-        */}
 
         <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
           {categoriesData !== null ?
